@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCPSistemaDeControlePacientes.APP.Views.MainPage">
+    <StackLayout Padding="20">
+        <!-- Campos de entrada -->
+        <Entry x:Name="NomeEntry" Placeholder="Nome" />
+        <Entry x:Name="IdadeEntry" Placeholder="Idade" Keyboard="Numeric" />
+        <Entry x:Name="TelefoneEntry" Placeholder="Telefone" />
+        <Entry x:Name="EnderecoEntry" Placeholder="Endereço" />
+
+        <!-- Botão de cadastro -->
+        <Button Text="Cadastrar" Clicked="OnCadastrarClicked" />
+
+        <!-- Lista de pacientes -->
+        <ListView x:Name="PacientesListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Idade, StringFormat='Idade: {0}'}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
